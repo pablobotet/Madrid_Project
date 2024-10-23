@@ -27,9 +27,5 @@ print(district_df.info)
 # Define the path where you want to save the Delta table
 # This can be a path in DBFS or an S3 bucket
 delta_table_path = "dbfs:/databricks-datasets/district_delta_table"
-
-
-
-# COMMAND ----------
-
+# Save the Spark DataFrame as a Delta table in DBFS
 
