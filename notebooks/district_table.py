@@ -2,7 +2,11 @@
 import sys
 
 sys.path.append('/Workspace/Users/pablobotet@gmail.com/Madrid_Project/common')
-from util import read_xls_from_s3
+
+
+
+
+from util import read_xls_from_s3, read_file
 #Ahora tenemos que obtener los datos del xls de los distritos
 # Try to access dbutils via the get_ipython method as a workaround
 # Assuming dbutils is available in the Databricks environment
@@ -26,10 +30,15 @@ print(district_df.info)
 
 # Define the path where you want to save the Delta table
 # This can be a path in DBFS or an S3 bucket
-delta_table_path = "dbfs:/databricks-datasets/district_delta_table"
+delta_table_path = "dbfs:/dbfs:/databricks-results/district_table"
 
+# Convert the Pandas DataFrame to a Spark DataFrame
+spark_district_df = spark.createDataFrame(district_df)
 
+# Save the Spark DataFrame as a Delta table in DBFS
+spark_district_df.write.format("delta").mode("overwrite").save(delta_table_path)
+# Save the Spark DataFrame as a Delta table in DBFS
 
 # COMMAND ----------
 
-
+df=read_file(bucket_name='raw-data-bicimad/datos-bicimad', file_key='trips_22_02_February-csv.zip', AWS_access_key_id=aws_access_key_id, AWS_secret_access_key=aws_secret_access_key)
