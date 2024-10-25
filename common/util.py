@@ -148,7 +148,9 @@ def unzip_and_upload_files_to_s3(bucket_name, zip_file_key, target_s3_folder, AW
             zipf.extractall(tmpdirname)
             # Iterate through the files in the temporary directory
             for file_name in os.listdir(tmpdirname):
+                print(file_name,1)
                 file_path = os.path.join(tmpdirname, file_name)
+                print(file_path,2)
                 # Define the S3 path where the file will be uploaded
                 s3_target_path = f"{target_s3_folder}/{file_name}"
                 
@@ -159,4 +161,9 @@ def unzip_and_upload_files_to_s3(bucket_name, zip_file_key, target_s3_folder, AW
                 print(f"Uploaded {file_name} to s3://{bucket_name}/{s3_target_path}. Ups")
 aws_access_key_id=dbutils.secrets.get("credentials", "AWS_user_id")
 aws_secret_access_key=dbutils.secrets.get("credentials", "AWS_secret_access_key")
+file_key_list=get_file_keys_from_s3_folder('raw-data-bicimad', 'datos-bicimad/zipped', aws_access_key_id, aws_secret_access_key)
+file_key_list=[i for i in file_key_list if '.zip' in i]
+
+
+unzip_and_upload_files_to_s3(bucket_name='raw-data-bicimad', zip_file_key='datos-bicimad/zipped/202105_movements-json.zip', target_s3_folder= 'datos-bicimad/unzipped',AWS_access_key_id=aws_access_key_id, AWS_secret_access_key =aws_secret_access_key)
 
