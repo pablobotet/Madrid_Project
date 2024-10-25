@@ -1,7 +1,7 @@
 import os
 import boto3
 import pandas as pd
-from io import StringIO
+from io import StringIO, BytesIO
 import boto3
 import zipfile
 from pyspark.dbutils import DBUtils
@@ -41,8 +41,6 @@ def write_df_to_s3(df:DataFrame,bucket_name:str, partition_by=None)->None:
         except Exception as e:
             print("Mistake loading file to bucket")
     pass
-
-
 
 def read_file(bucket_name: str, file_key: str, AWS_access_key_id:str, AWS_secret_access_key:str):
     # Create a session using stored AWS credentials
