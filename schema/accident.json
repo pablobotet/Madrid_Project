@@ -1,0 +1,36 @@
+
+{
+  "type": "struct",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string",
+      "nullable": true
+    },
+    {
+      "name": "lockid",
+      "type": "string",
+      "nullable": true
+    },
+    {
+      "name": "unlockid",
+      "type": "string",
+      "nullable": true
+    },
+    {
+      "name": "start",
+      "type": "timestamp",
+      "nullable": true
+    },
+    {
+      "name": "time",
+      "type": "integer",
+      "nullable": true
+    },
+    {
+      "name": "unlocktype",
+      "type": "string",
+      "nullable": true
+    }
+  ]
+}

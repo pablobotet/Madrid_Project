@@ -1,0 +1,36 @@
+
+{
+  "type": "struct",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string",
+      "nullable": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "nullable": false
+    },
+    {
+      "name": "surface",
+      "type": "float",
+      "nullable": false
+    },
+    {
+      "name": "population",
+      "type": "integer",
+      "nullable": false
+    },
+    {
+      "name": "average_price_of_square_meter",
+      "type": "float",
+      "nullable": true
+    },
+    {
+      "name": "number_of_cars",
+      "type": "integer",
+      "nullable": false
+    }
+  ]
+}

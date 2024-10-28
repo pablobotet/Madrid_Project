@@ -1,0 +1,36 @@
+
+{
+  "type": "struct",
+  "fields": [
+    {
+      "name": "idBike",
+      "type": "string",
+      "nullable": true
+    },
+    {
+      "name": "station_unlock",
+      "type": "string",
+      "nullable": true
+    },
+    {
+      "name": "station_lock",
+      "type": "string",
+      "nullable": true
+    },
+    {
+      "name": "unlock_date",
+      "type": "timestamp",
+      "nullable": true
+    },
+    {
+      "name": "lock_date",
+      "type": "integer",
+      "nullable": true
+    },
+    {
+      "name": "unlocktype",
+      "type": "string",
+      "nullable": true
+    }
+  ]
+}
