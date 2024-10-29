@@ -3,7 +3,7 @@
   "type": "struct",
   "fields": [
     {
-      "name": "idBike",
+      "name": "id_trip",
       "type": "string",
       "nullable": true
     },
@@ -23,13 +23,23 @@
       "nullable": true
     },
     {
-      "name": "lock_date",
-      "type": "integer",
+      "name": "travel_time",
+      "type": "float",
       "nullable": true
     },
     {
       "name": "unlocktype",
       "type": "string",
+      "nullable": true
+    },
+    {
+      "name": "year",
+      "type": "integer",
+      "nullable": true
+    },
+    {
+      "name": "month",
+      "type": "integer",
       "nullable": true
     }
   ]
