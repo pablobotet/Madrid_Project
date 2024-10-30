@@ -8,28 +8,64 @@
       "nullable": true
     },
     {
-      "name": "lockid",
-      "type": "string",
-      "nullable": true
-    },
-    {
-      "name": "unlockid",
-      "type": "string",
-      "nullable": true
-    },
-    {
-      "name": "start",
+      "name": "hour",
       "type": "timestamp",
       "nullable": true
     },
     {
-      "name": "time",
+      "name": "location_street",
+      "type": "string",
+      "nullable": true
+    },
+    {
+      "name": "location_number",
       "type": "integer",
       "nullable": true
     },
     {
-      "name": "unlocktype",
+      "name": "district_id",
+      "type": "integer",
+      "nullable": true
+    },
+    {
+      "name": "accident_type",
       "type": "string",
+      "nullable": true
+    },
+    {
+      "name": "weather",
+      "type": "string",
+      "nullable": true
+    },
+    {
+      "name": "vehicle",
+      "type": "string",
+      "nullable": true
+    },
+    {
+      "name": "person_involved",
+      "type": "string",
+      "nullable": true
+    }
+    ,
+    {
+      "name": "age_range",
+      "type": "string",
+      "nullable": true
+    },
+    {
+      "name": "alcohol",
+      "type": "bool",
+      "nullable": true
+    },
+    {
+      "name": "drugs",
+      "type": "bool",
+      "nullable": true
+    },
+    {
+      "name": "year",
+      "type": "integer",
       "nullable": true
     }
   ]

@@ -4,7 +4,7 @@
   "fields": [
     {
       "name": "id",
-      "type": "string",
+      "type": "integer",
       "nullable": false
     },
     {
@@ -24,7 +24,7 @@
     },
     {
       "name": "average_price_of_square_meter",
-      "type": "float",
+      "type": "integer",
       "nullable": true
     },
     {

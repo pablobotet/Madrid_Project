@@ -9,7 +9,7 @@ location = geolocator.geocode("Hyderabad")
 print("The latitude of the location is: ", location.latitude)
 print("The longitude of the location is: ", location.longitude)
 
-coordinates = "40.4172 , -3.7018341"
+coordinates = "40.4172,-3.7018341   "
 
 location = geolocator.reverse(coordinates)
 
@@ -20,5 +20,5 @@ city = address.get('city', '')
 state = address.get('state', '')
 country = address.get('country', '')
 neighbourhood=address.get('neighbourhood','')
-neighbourhood=address.get('village','')
+neighbourhood=address.get('zip_code','')
 print(city,state,country,neighbourhood)
