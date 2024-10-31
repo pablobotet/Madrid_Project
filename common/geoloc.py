@@ -56,18 +56,28 @@ dict_dist={'28001':4,
 '28042':21,
 }
 # Iniciamos el servicio
+import requests
+
 def location_to_zipcode(coordinates):
-    geolocator = Nominatim(user_agent="MyApp")
-    location = geolocator.reverse(coordinates)
-    address=location.raw['address']
-    if 'postcode' in address:
-        return address['postcode']
-    else:
+    try:
+        # Assuming you're using the requests library for the HTTP call
+        response = requests.get(
+            "https://nominatim.openstreetmap.org/reverse",
+            params={"lat": coordinates[0], "lon": coordinates[1], "format": "json"},
+            timeout=10  # Increase the timeout to 10 seconds
+        )
+        response.raise_for_status()  # This will raise an exception for HTTP errors
+        data = response.json()
+        # Extract the zipcode from the response data
+        return data.get("address", {}).get("postcode")
+    except requests.RequestException as e:
+        # Handle exceptions or log them
+        print(f"Request failed: {e}")
         return None
 
 def zipcode_to_district(zipcode):
     if zipcode in dict_dist:
-        return dict['zipcode']
+        return dict_dist[zipcode]
     else: 
         return None
 

@@ -11,7 +11,7 @@ print("The longitude of the location is: ", location.longitude)
 
 coordinates = "40.4172,-3.7018341   "
 
-location = geolocator.reverse(coordinates)
+location = geolocator.reverse((40.41,-3.70))
 
 address = location.raw['address']
 

@@ -1,0 +1,53 @@
+{
+  "name": "Master_Job",
+  "new_cluster": {
+    "spark_version": "7.3.x-scala2.12",
+    "node_type_id": "i3.large",
+    "num_workers": 2,
+    "init_scripts":[
+        {
+            "dbfs":{
+                "destination":"/Workspace/Users/pablobotet@gmail.com/Madrid_Project/workflow/bash/init.sh"
+            }
+        }
+    ]
+  },
+  "tasks": [
+    {
+      "task_key": "accident_table",
+      "notebook_task": {
+        "notebook_path": "/Workspace/Users/pablobotet@gmail.com/Madrid_Project/notebooks/accident_table"
+      }
+    },
+    {
+      "task_key": "district_table",
+      "notebook_task": {
+        "notebook_path": "/Workspace/Users/pablobotet@gmail.com/Madrid_Project/notebooks/district_table"
+      }
+    },
+    {
+      "task_key": "trips_table",
+      "notebook_task": {
+        "notebook_path": "/Workspace/Users/pablobotet@gmail.com/Madrid_Project/notebooks/trips"
+      }
+    },
+    {
+      "task_key": "station_table",
+      "depends_on": ["trips_table"],
+      "notebook_task": {
+        "notebook_path": "/Workspace/Users/pablobotet@gmail.com/Madrid_Project/notebooks/station_table"
+      }
+    }
+  ],
+  "email_notifications": {
+    "on_start": ["pablobotet@gmail.com.com"],
+    "on_success": ["pablobotet@gmail.com.com"],
+    "on_failure": ["pablobotet@gmail.com.com"]
+  },
+  "max_retries": 1,
+  "min_retry_interval_millis": 60000,
+  "logging": {
+    "s3": {
+      "destination": "s3://logs-bicimad/"
+    }
+}

@@ -33,7 +33,7 @@ district_df=district_df.drop(columns=['a'])
 
 
 #CONVERTIMOS Y LO SUBIMOS A S3
-delta_table_path = "s3://curated-data-bicimad/single-files/"
+delta_table_path = "s3://curated-data-bicimad/single-files/district-table/"
 
 
 schema_path = "/Workspace/Users/pablobotet@gmail.com/Madrid_Project/schema/district_schema.json"
