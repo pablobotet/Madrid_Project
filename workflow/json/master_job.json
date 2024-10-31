@@ -50,4 +50,5 @@
     "s3": {
       "destination": "s3://logs-bicimad/"
     }
+  }
 }
